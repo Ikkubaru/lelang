@@ -5,36 +5,35 @@ require_once('layout/_navbar.php')?>
                 <div class="row g-4 align-items-center">
                     <div class="col-lg-12">
                         <div class="py-4">
-                         <form action="" method="post" action="">
+                         <form action="<?= base_url('apply/add') ?>" method="post" enctype='multipart/form-data'>
                                     <div class="form-group">
                                         <label for="" class="form-control-label"></label>
-                                        <input type="text" class="form-control" placeholder="Nama Barang" name="" required>
+                                        <input type="text" class="form-control" placeholder="Nama Barang" name="nama_barang" required>
                                     </div>  
 
                                 <div class="form-group">
                                     <label for="exampleSelect1" class="form-control-label"></label>
-                                        <select class="form-control" id="exampleSelect1" required>
-                                            <option> kategori 1</option>
-                                            <option> kategori 2</option>
-                                            <option> kategori 3</option>
-                                            <option> kategori 4</option>
+                                    <select class="form-control" id="exampleSelect1" required name="id_kategori">
+                                    <?php foreach($kategori as $kate){ ?>
+                                            <option value="<?= $kate['id_kategori'] ?>"><?= $kate['nama_kategori'] ?></option>
+                                            <?php }?>
                                         </select>
                                 </div> 
                                 <div class="form-group">
                                     <label for="" class="form-control-label"></label>
-                                        <input type="date" class="form-control" id="tanggal" name="" readonly>
+                                        <input type="date" class="form-control" id="tanggal" name="tanggal" readonly>
                                 </div>
                                 <div class="form-group">
                                     <label for="" class="form-control-label"></label>
-                                        <input type="number" class="form-control" placeholder="Harga Awal (Rp.)" name="">
+                                        <input type="number" class="form-control" placeholder="Harga Awal (Rp.)" name="harga_awal">
                                 </div>
                                 <div class="form-group">
                                     <label for="" class="form-control-label"></label>
-                                        <input type="file" class="form-control" placeholder="Gambar" name="">
+                                        <input type="file" class="form-control" placeholder="Gambar" name="foto" accept="image/png, image/jpg, image/jpeg" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="" class="form-control-label"></label>
-                                    <textarea class="form-control" placeholder="" name="">Deskripsi :
+                                    <textarea class="form-control" placeholder="" name="deskripsi_barang">Deskripsi :
                                     </textarea>
                                 </div>
                                 <br>

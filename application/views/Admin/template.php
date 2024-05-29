@@ -104,14 +104,10 @@
                     </a>                
                 </li>
                 <li class="nav-level">--- Navigation</li>
-                <li class="<?php if($halaman == 'apply'){echo "active";} ?> treeview"><a class="waves-effect waves-dark" href="#!"><i class="icon-briefcase"></i><span> Pengajuan Lelang</span></a>
-                    <ul class="treeview-menu">
-                    </ul>
-                </li>
-                <li class="nav-level">--- More</li>
 
                 <li class="treeview"><a class="waves-effect waves-dark" href="#!"><i class="icon-docs"></i><span>Pages</span><i class="icon-arrow-down"></i></a>
                     <ul class="active treeview-menu">
+                        <li><a class="waves-effect waves-dark" href="<?= base_url('admin/pengajuan') ?>" ><i class="icon-arrow-right"></i>Pengajuan Lelang</a></li>
                         <li><a class="waves-effect waves-dark" href="" ><i class="icon-arrow-right"></i>Lelang Berlangsung</a></li>
                         <li><a class="waves-effect waves-dark" href=""><i class="icon-arrow-right"></i> Lelang Selesai</a></li>
                         <li><a class="waves-effect waves-dark" href=""><i class="icon-arrow-right"></i> History Lelang</a></li>

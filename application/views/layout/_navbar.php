@@ -52,12 +52,6 @@
                     <div class="collapse navbar-collapse bg-white" id="navbarCollapse">
                         <div class="navbar-nav mx-auto">
                             <a href="#" class="nav-item nav-link active">Home</a>
-                            <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Kategori</a>
-                                <div class="dropdown-menu m-0 bg-secondary rounded-0">
-                                    <a href="cart.html" class="dropdown-item">Cart</a>
-                                </div>
-                            </div>
                             <a href="" class="nav-item nav-link">Contact</a>
                             <?php if($this->session->userdata('nama') == NULL){ ?>
                                 <a href="" class="nav-item nav-link">....</a>
