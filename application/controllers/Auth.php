@@ -38,6 +38,7 @@ class Auth extends CI_Controller {
         redirect('auth');
         }else if($user->password==$password){
             $data = array(
+				'id_user'   	=> $user->id_user,
                 'nama'      	=> $user->nama,
                 'no_telp'  		=> $user->no_telp,
                 'alamat'     	=> $user->alamat,

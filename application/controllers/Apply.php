@@ -36,7 +36,7 @@ class Apply extends CI_Controller {
         }
 
 		$data = array(
-			'nama'				=> $this->session->userdata('nama'),
+			'id_user'			=> $this->session->userdata('id_user'),
 			'nama_barang'		=> $this->input->post('nama_barang'),
 			'id_kategori'		=> $this->input->post('id_kategori'),
 			'tanggal'			=> date('Y-m-d'),

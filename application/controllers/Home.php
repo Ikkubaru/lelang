@@ -14,5 +14,7 @@ class Home extends CI_Controller {
         $data['username'] = $this->session->userdata('username');
 
 		$this->load->view('homepage',$data);
+
+		
 	}
 }

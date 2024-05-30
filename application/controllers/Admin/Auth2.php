@@ -13,7 +13,8 @@ class Auth2 extends CI_Controller {
     public function login(){
         $username = $this->input->post('username');
         $password = md5($this->input->post('password'));
-        $this->db->from('petugas')->where('username',$username);
+        $this->db->from('petugas');
+        $this->db->where('username',$username);
         $user = $this->db->get()->row();
         if($user==NULL){
         $this->session->set_flashdata('alert','
@@ -24,8 +25,9 @@ class Auth2 extends CI_Controller {
         redirect('admin/auth2');
         }else if($user->password==$password){
             $data = array(
-                'nama'          => $user->nama, 
-                'no_telp'       => $user->no_telp,
+                'id_petugas'    => $user->id_petugas,
+                'nama_petugas'  => $user->nama_petugas,
+                'telp'          => $user->telp,
                 'alamat'        => $user->alamat,
                 'username'      => $user->username,
                 'level'         => $user->level,
