@@ -15,6 +15,6 @@ class Home extends CI_Controller {
 
 		$this->load->view('homepage',$data);
 
-		
+		$this->db->from('lelang')->where('status','dibuka');
 	}
 }

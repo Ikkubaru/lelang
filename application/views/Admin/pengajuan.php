@@ -9,13 +9,13 @@
                               <div class="panel-body"> <br>
                                 <img src="<?= base_url('assets/upload/barang/').$thing['foto'] ?>" weight="300px" height="300px">
                                 <div class="col-sm-6 col-xs-12 waves-effect waves-light">
-                        <form action="<?= base_url('admin/pengajuan/tambah') ?>" method="post">
+                        <form action="<?= base_url('admin/pengajuan/tambah/').$thing['id_barang'] ?>" method="post">
                                     <div class="grid-material bg-info"><h5> Rincian Lelang : </h5></div>
-                                    <input type="hidden" name="id_barang" value="<?=$thing['id_barang'] ?>">
+
                                     <label for="" class="form-control-label">Diajukan oleh : </label>
-                                        <input type="text" name="id_user" value="<?= $thing['id_user'] ?>" class="form-control" readonly>
+                                        <input type="text" name="id_user" value="<?= $thing['nama'] ?>" class="form-control" readonly>
                                     <label for="" class="form-control-label">Kategori Lelang : </label>
-                                        <input type="text" name="" value="<?= $thing['id_kategori'] ?>" class="form-control" readonly>
+                                        <input type="text" name="" value="<?= $thing['nama_kategori'] ?>" class="form-control" readonly>
                                     <label for="" class="form-control-label">Tamggal diajukan : </label>
                                         <input type="text" name="tgl_lelang" value="<?= $thing['tanggal'] ?>" class="form-control" readonly>
                                     <label for="" class="form-control-label">Deskripsi Barang : </label>

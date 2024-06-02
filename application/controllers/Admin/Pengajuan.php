@@ -10,13 +10,13 @@ class Pengajuan extends CI_Controller {
 	}
 	public function index()
 	{
-		$this->db->from('barang')->where('status','available');
+        $this->db->join('user', 'barang.id_user = user.id_user', 'left');
+		$this->db->join('kategori','barang.id_kategori=kategori.id_kategori');
+		$this->db->from('barang')->where('status','available')->order_by('tanggal','DESC');
         $barang = $this->db->get()->result_array();
 		$data = array(
 			'nama_barang'	        => 'nama_barang',
 			'id_kategori'			=> 'id_kategori',
-			// nama blm bisa tampil
-            'nama'	               	=> 'nama',
 			'tanggal'		        => 'tanggal',
 			'harga_awal'		    => 'harga_awal',
 			'foto'			        => 'foto',
@@ -26,9 +26,9 @@ class Pengajuan extends CI_Controller {
 		);
 		$this->template->load('admin/template','admin/pengajuan',$data);
 	}
-	public function tambah(){
+	public function tambah($id_barang){
 		$data = array(
-			'id_barang'		=> $id_barang = $this->input->post('id_barang'),
+			'id_barang'		=> $id_barang,
 			'tgl_lelang'	=> $this->input->post('tgl_lelang'),
 			'harga_awal'	=> $this->input->post('harga_awal'),
 			'id_user'		=> $this->input->post('id_user'),

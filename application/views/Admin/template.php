@@ -46,20 +46,6 @@
          <nav class="navbar navbar-static-top">
             <!-- Sidebar toggle button-->
             <a href="#!" data-toggle="offcanvas" class="sidebar-toggle"></a>
-            <ul class="top-nav lft-nav">           
-               <li class="dropdown">
-                  <a href="#!" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle drop icon-circle drop-image">
-                     <span>Dropdown </span><i class=" icofont icofont-simple-down"></i>
-                  </a>
-                  <ul class="dropdown-menu settings-menu">
-                     <li><a href="#">List item 1</a></li>
-                     <li><a href="#">List item 2</a></li>
-                     <li><a href="#">List item 3</a></li>
-                     <li><a href="#">List item 4</a></li>
-                     <li><a href="#">List item 5</a></li>
-                  </ul>
-               </li>
-            </ul>
             <!-- Navbar Right Menu-->
                <ul class="top-nav">
                   <!--Notification Menu-->
