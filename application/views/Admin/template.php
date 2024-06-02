@@ -82,47 +82,59 @@
          <section class="sidebar" id="sidebar-scroll">
             <!-- Sidebar Menu-->
             <ul class="sidebar-menu">
-            <?php $halaman=$this->uri->segment(2);?>
-                <li class="nav-level"></li>
+               <?php $halaman=$this->uri->segment(2);?>
+                <li class="nav-level">--- Navigation</li>
                 <li class="<?php if($halaman == 'dashboard'){echo "active";} ?> treeview">
-                    <a class="waves-effect waves-dark" href="">
+                    <a class="waves-effect waves-dark" href="<?= base_url('dashboard');?>">
                         <i class="icon-home"></i><span> Dashboard</span>
                     </a>                
                 </li>
-                <li class="nav-level">--- Navigation</li>
-
-                <li class="treeview"><a class="waves-effect waves-dark" href="#!"><i class="icon-docs"></i><span>Pages</span><i class="icon-arrow-down"></i></a>
-                    <ul class="active treeview-menu">
-                        <li><a class="waves-effect waves-dark" href="<?= base_url('admin/pengajuan') ?>" ><i class="icon-arrow-right"></i>Pengajuan Lelang</a></li>
-                        <li><a class="waves-effect waves-dark" href="" ><i class="icon-arrow-right"></i>Lelang Berlangsung</a></li>
-                        <li><a class="waves-effect waves-dark" href=""><i class="icon-arrow-right"></i> Lelang Selesai</a></li>
-                        <li><a class="waves-effect waves-dark" href=""><i class="icon-arrow-right"></i> History Lelang</a></li>
-                        <li class="<?php if($halaman == 'kategori'){echo "active";} ?>"><a class="treeview-menu " href="<?= base_url('admin/kategori') ?>"><i class="icon-arrow-right"></i> Kategori Lelang</a></li>
-                    </ul>
+                <li class="nav-level">--- Components</li>
+                <li class="<?php if($halaman == 'pengajuan'){echo "active";} ?> treeview">
+                    <a class="waves-effect waves-dark" href="<?= base_url('admin/pengajuan');?>">
+                        <i class="icon-basket"></i><span> Pengajuan Lelang</span>
+                    </a>                
+                </li>
+                <li class="<?php if($halaman == 'lelang_on'){echo "active";} ?> treeview">
+                    <a class="waves-effect waves-dark" href="<?= base_url('admin/lelang_on');?>">
+                        <i class="icon-basket"></i><span> Lelang Berlangsung</span>
+                    </a>                
+                </li>
+                <li class="<?php if($halaman == ''){echo "active";} ?> treeview">
+                    <a class="waves-effect waves-dark" href="<?= base_url('');?>">
+                        <i class="icon-basket"></i><span> Lelang Selesai</span>
+                    </a>                
+                </li>
+                <li class="<?php if($halaman == ''){echo "active";} ?> treeview">
+                    <a class="waves-effect waves-dark" href="<?= base_url('');?>">
+                        <i class="icon-basket"></i><span> History Lelang</span>
+                    </a>                
+                </li>
+                <li class="<?php if($halaman == 'kategori'){echo "active";} ?> treeview">
+                    <a class="waves-effect waves-dark" href="<?= base_url('admin/kategori');?>">
+                        <i class="icon-basket"></i><span> Kategori Lelang</span>
+                    </a>                
+                </li>
+                <li class="treeview">
+                    <a class="waves-effect waves-dark" >
+                        <i class=""></i><span> </span>
+                    </a>                
                 </li>
                 <?php if($this->session->userdata('level') == 'admin'){ ?>
-                <li class="nav-level">---------</li>
-                <li class="treeview"><a class="waves-effect waves-dark" href=""><i class="icofont icofont-company"></i><span>User Level</span><i class="icon-arrow-down"></i></a>
-                    <ul class="treeview-menu">
-                        <li>
-                            <a class="waves-effect waves-dark" href="<?= base_url('admin/admin') ?>">
-                                <i class="icon-arrow-right"></i>
-                                Administrator
-                            </a>
-                        </li>
-                        <li>
-                            <a class="waves-effect waves-dark" href="<?= base_url('admin/petugas') ?>">
-                                <i class="icon-arrow-right"></i>
-                                Petugas
-                            </a>
-                        </li>
-                        <li>
-                            <a class="waves-effect waves-dark" href="<?= base_url('admin/user') ?>">
-                                <i class="icon-arrow-right"></i>
-                                User Basic
-                            </a>
-                        </li>
-                    </ul>
+                <li class="<?php if($halaman == 'admin'){echo "active";} ?> treeview">
+                    <a class="waves-effect waves-dark" href="<?= base_url('admin/admin');?>">
+                        <i class="icon-people"></i><span> Administrator</span>
+                    </a>                
+                </li>
+                <li class="<?php if($halaman == 'petugas'){echo "active";} ?> treeview">
+                    <a class="waves-effect waves-dark" href="<?= base_url('admin/petugas');?>">
+                        <i class="icon-people"></i><span> Petugas</span>
+                    </a>                
+                </li>
+                <li class="<?php if($halaman == 'user'){echo "active";} ?> treeview">
+                    <a class="waves-effect waves-dark" href="<?= base_url('admin/user');?>">
+                        <i class="icon-people"></i><span> User Basic</span>
+                    </a>                
                 </li>
                 <?php }?>
             </ul>

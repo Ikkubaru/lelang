@@ -7,7 +7,7 @@
                         <?php if($this->session->userdata('nama') == NULL){ ?>
                             <h4 class="mb-3 text-dark">Selamat Datang di NoeLelang</h4>
                             <?php }else{?>
-                        <h4 class="mb-3 text-dark">Selamat Datang <?= $nama ?></h4>
+                        <h4 class="mb-3 text-dark">Selamat Datang <?= $this->session->userdata('nama') ?></h4>
                         <?php } ?>
                         <h1 class="mb-5 display-3 text-primary">Lelang Online Nomor Satu di Penacony</h1>
                         <div class="position-relative mx-auto">
@@ -43,7 +43,7 @@
                             <ul class="nav nav-pills d-inline-flex text-center mb-5">
                                 <li class="nav-item">
                                     <a class="d-flex m-2 py-2 bg-light rounded-pill active" data-bs-toggle="pill" href="#tab-1">
-                                        <span class="text-dark" style="width: 130px;">text 1</span>
+                                        <span class="text-dark" style="width: 130px;"></span>
                                     </a>
                                 </li>
                                 <li class="nav-item">

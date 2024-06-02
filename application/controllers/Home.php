@@ -8,13 +8,7 @@ class Home extends CI_Controller {
 	}
 	public function index()
 	{
-		$data['nama'] = $this->session->userdata('nama');
-        $data['no_telp'] = $this->session->userdata('no_telp');
-        $data['alamat'] = $this->session->userdata('alamat');
-        $data['username'] = $this->session->userdata('username');
-
-		$this->load->view('homepage',$data);
-
-		$this->db->from('lelang')->where('status','dibuka');
+		// $this->db->from('lelang')->where('status','dibuka');
+		$this->load->view('homepage');
 	}
 }
