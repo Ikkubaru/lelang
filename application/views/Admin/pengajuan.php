@@ -11,7 +11,6 @@
                                 <div class="col-sm-5 col-xs-12 waves-effect waves-light">
                         <form action="<?= base_url('admin/pengajuan/tambah/').$thing['id_barang'] ?>" method="post">
                                     <div class="grid-material bg-info"><h5> Rincian Lelang : </h5></div>
-
                                     <label for="" class="form-control-label">Diajukan oleh : </label> <br>
                                         <input type="hidden" name="id_user" value="<?= $thing['id_user'] ?>" class="form-control" readonly>
                                         <label for="" class="form-control-label"><?= $thing['nama'] ?></label> <br>

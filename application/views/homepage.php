@@ -37,35 +37,17 @@
                 <div class="tab-class text-center">
                     <div class="row g-4">
                         <div class="col-lg-4 text-start">
-                            <h1>input text</h1>
+                            <h1>Kategori Lelang : </h1>
                         </div>
                         <div class="col-lg-8 text-end">
                             <ul class="nav nav-pills d-inline-flex text-center mb-5">
+                                <?php foreach($kategori as $kate){ ?>
                                 <li class="nav-item">
-                                    <a class="d-flex m-2 py-2 bg-light rounded-pill active" data-bs-toggle="pill" href="#tab-1">
-                                        <span class="text-dark" style="width: 130px;"></span>
+                                    <a class="d-flex m-2 py-2 bg-light rounded-pill active"  href="<?= base_url('') ?>">
+                                        <span class="text-dark" style="width: 130px;"><?= $kate['nama_kategori'] ?></span>
                                     </a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="d-flex py-2 m-2 bg-light rounded-pill" data-bs-toggle="pill" href="#tab-2">
-                                        <span class="text-dark" style="width: 130px;">text 2</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="d-flex m-2 py-2 bg-light rounded-pill" data-bs-toggle="pill" href="#tab-3">
-                                        <span class="text-dark" style="width: 130px;">text 3</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="d-flex m-2 py-2 bg-light rounded-pill" data-bs-toggle="pill" href="#tab-4">
-                                        <span class="text-dark" style="width: 130px;">text 4</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="d-flex m-2 py-2 bg-light rounded-pill" data-bs-toggle="pill" href="#tab-5">
-                                        <span class="text-dark" style="width: 130px;">text 5</span>
-                                    </a>
-                                </li>
+                                <?php } ?>
                             </ul>
                         </div>
                     </div>
@@ -74,46 +56,24 @@
                             <div class="row g-4">
                                 <div class="col-lg-12">
                                     <div class="row g-4">
+                                        <?php foreach($barang as $barank){ ?>
                                         <div class="col-md-6 col-lg-4 col-xl-3">
                                             <div class="rounded position-relative fruite-item">
                                                 <div class="fruite-img">
-                                                    <img src="<?= base_url('assets/assets2/') ?>img/fruite-item-5.jpg" class="img-fluid w-100 rounded-top" alt="">
+                                                    <img src="<?= base_url('assets/upload/barang/').$barank['foto'] ?>" class="img-fluid w-100 rounded-top">
                                                 </div>
-                                                <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;">input kategori</div>
+                                                <!-- <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;"><?= $barank['id_kategori'] ?></div> -->
                                                 <div class="p-4 border border-secondary border-top-0 rounded-bottom">
-                                                    <h4>input judul</h4>
-                                                    <p>input deksripsi lelang</p>
+                                                    <h4><?= $barank['nama_barang'] ?></h4>
+                                                    <p><?= $barank['deskripsi_barang'] ?></p>
                                                     <div class="d-flex justify-content-between flex-lg-wrap">
-                                                        <p class="text-dark fs-5 fw-bold mb-0">harga awal Rp....</p> <br>
-                                                        <center><a href="#" class="btn border border-secondary rounded-pill px-3 text-primary">ikut lelang</a></center>
+                                                        <p class="text-dark fs-5 fw-bold mb-0">Harga penawaran : Rp. <?= number_format($barank['harga_awal']) ?></p> <br>
+                                                        <center><a href="<?= base_url('ikut_lelang/lelang/').$barank['id_barang'] ?>" class="btn border border-secondary rounded-pill px-3 text-primary">ikut lelang</a></center>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="tab-2" class="tab-pane fade show p-0">
-                            <div class="row g-4">
-                                <div class="col-lg-12">
-                                    <div class="row g-4">
-                                        <div class="col-md-6 col-lg-4 col-xl-3">
-                                            <div class="rounded position-relative fruite-item">
-                                                <div class="fruite-img">
-                                                    <img src="<?= base_url('assets/assets2/') ?>img/fruite-item-2.jpg" class="img-fluid w-100 rounded-top" alt="">
-                                                </div>
-                                                <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;">input kategori 2</div>
-                                                <div class="p-4 border border-secondary border-top-0 rounded-bottom">
-                                                    <h4>input judul 2</h4>
-                                                    <p>deskripsi lelang 2</p>
-                                                    <div class="d-flex justify-content-between flex-lg-wrap">
-                                                        <p class="text-dark fs-5 fw-bold mb-0">harga awal 2</p>
-                                                        <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary">ikut lelang 2</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <?php }?>
                                     </div>
                                 </div>
                             </div>
