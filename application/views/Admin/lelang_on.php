@@ -1,40 +1,25 @@
-<h1>Data Pengajuan Lelang</h1>
+<h1>Data Lelang Yang Sedang Berlangsung</h1>
 <!-- dibuat form jangan lupa -->
 <div class="col-xl-12 col-lg-4 col-md-4 col-sm-6">
+    <?php foreach($lelang as $lel){ ?>
                            <div class="panel panel-default">
-                                <div class="panel-heading bg-info txt-white">
-                                            <h3>Rincian Lelang Yang Dibuka</h3>
-                                </div>
-                            <div class="panel-body"> <br>
-                                <div class="col-sm-12 col-xs-12 waves-effect waves-light">
-                                <div class="col-sm-12 table-responsive">
-                              <table class="table table-hover">
-                                 <thead>
-                                    <tr>
-                                       <th>No</th>
-                                       <th>Id Barang</th>
-                                       <th>Tgl Lelang</th>
-                                       <th>Harga Awal</th>
-                                       <th>Id user</th>
-                                       <th>Id petugas</th>
-                                    </tr>
-                                 </thead>
-                                 <tbody>
-                                 <?php 
-                                 $no = 1;
-                                 foreach($lelang as $auction){ ?>
-                                    <tr>
-                                       <td><?= $no++ ?></td>
-                                       <td><?= $auction['id_barang'] ?></td>
-                                       <td><?= $auction['tgl_lelang'] ?></td>
-                                       <td><?= $auction['harga_awal'] ?></td>
-                                       <td><?= $auction['id_user'] ?></td>
-                                       <td><?= $auction['id_petugas'] ?></td>
-                                    </tr>
-                                    <?php } ?>
-                                 </tbody>
-                              </table>
-                           </div>
-                                </div>
-                            </div>
+                              <div class="panel-heading bg-info txt-white">
+                                    <h4>Data Lelang Sedang Berlangsung</h4>
+                              </div>
+                              <div class="panel-body"> <br>
+                                <img src="<?= base_url('assets/upload/barang/').$lel['foto'] ?>" weight="300px" height="300px">
+                                <div class="col-sm-5 col-xs-12 waves-effect waves-light">
+                        <form action="" method="post">
+                                    <div class="grid-material bg-info"><h5> Rincian Lelang : </h5></div>
+                                    <label for="" class="form-control-label">Diajukan oleh : </label> <br>
+                                    <label for="" class="form-control-label">Tanggal diajukan : </label> <br>
+                                    <label for="" class="form-control-label">Harga Akhir : </label> <br>
+                                            </div>
+                                            <div class="panel-footer">
+                                                <button type="submit" class="btn btn-success" value="dibuka" name="status" href="<?= base_url('admin/pengajuan/tambah'.$lel['id_barang']) ?>">Disetujui</button>
+                                                <button type="submit" class="btn btn-danger" value="ditolak" name="status" href="<?= base_url('admin/pengajuan/tambah'.$lel['id_barang']) ?>">Ditolak</button>
+                                                </div>
+                                            </div>
+                                          </form>
+        <?php } ?>
                         </div>

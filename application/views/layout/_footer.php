@@ -22,8 +22,8 @@
                 <div class="row g-5">
                     <div class="col-lg-3 col-md-6">
                         <div class="footer-item">
-                            <h4 class="text-light mb-3">Kenapa NoeLelang</h4>
-                            <p class="mb-4"></p>
+                            <h4 class="text-light mb-3">Kenapa NoeLelang?</h4>
+                            <p class="mb-4">Noe Lelang memberikan pilihan lelang yang variatif.</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
@@ -34,8 +34,8 @@
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <div class="d-flex flex-column text-start footer-item">
-                            <h4 class="text-light mb-3">Kategori</h4>
-                            <a class="btn-link" href="">kategori 1</a>
+                            <h4 class="text-light mb-3"></h4>
+                            <a class="btn-link" href=""></a>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
