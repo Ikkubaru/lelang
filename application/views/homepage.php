@@ -9,7 +9,7 @@
                             <?php }else{?>
                         <h4 class="mb-3 text-dark">Selamat Datang <?= $this->session->userdata('nama') ?></h4>
                         <?php } ?>
-                        <h1 class="mb-5 display-3 text-primary">Lelang Online Nomor Satu di Penacony</h1>
+                        <h1 class="mb-5 display-3 text-primary">Lelang Online Nomor Satu di Teyvat</h1>
                         <div class="position-relative mx-auto">
                         </div>
                     </div>
@@ -68,7 +68,7 @@
                                                     <p><?= $barank['deskripsi_barang'] ?></p>
                                                     <div class="d-flex justify-content-between flex-lg-wrap">
                                                         <p class="text-dark fs-5 fw-bold mb-0">Harga penawaran : Rp. <?= number_format($barank['harga_awal']) ?></p> <br>
-                                                        <center><a href="<?= base_url('ikut_lelang/lelang/').$barank['id_barang'] ?>" class="btn border border-secondary rounded-pill px-3 text-primary">ikut lelang</a></center>
+                                                        <center><a href="<?= base_url('ikut_lelang/lelang/'.$barank['id_barang'])?>" class="btn border border-secondary rounded-pill px-3 text-primary">ikut lelang</a></center>
                                                     </div>
                                                 </div>
                                             </div>

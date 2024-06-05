@@ -60,7 +60,6 @@
                                 <?php } ?>
                         </div>
                         <div class="d-flex m-3 me-0">
-                            <button class="btn-search btn border border-primary btn-md-square rounded-circle bg-white me-4" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search text-primary"></i></button>
                             <a href="#" class="my-auto">
                                 <?php if($this->session->userdata('nama') == FALSE){ ?>
                                     <div class="nav-item dropdown">

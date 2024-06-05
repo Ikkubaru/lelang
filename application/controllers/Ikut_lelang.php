@@ -11,7 +11,6 @@ class Ikut_lelang extends CI_Controller {
 	}
 	public function index()
 	{
-		
 	}
     public function lelang($id_barang){
 
@@ -19,29 +18,29 @@ class Ikut_lelang extends CI_Controller {
         $this->db->join('barang', 'lelang.id_barang = barang.id_barang');
         $this->db->where('barang.id_barang',$id_barang);
         $data['lelang'] = $this->db->get()->row();
-        
-        $this->db->from('harga_penawar');
-        $this->db->join('user','harga_penawar.id_user=user.id_user');
-        $user = $this->db->get()->result_array();
 
-        $harga = array(
-            'id_harga'  => 'id_harga',
-            'id_user'   => 'id_user',
-            'harga'     => 'harga',
-            'id_barang' => 'id_barang',
-            'id_lelang' => 'id_lelang',
-            'user'      => $user,
-        );
-        $this->load->view('ikut_lelang',$data,$harga);
+        $this->load->view('ikut_lelang',$data);
     }
     public function tawar($id_barang){
+
+        $this->db->from('harga_penawar');
+        $this->db->join('user','harga_penawar.id_user=user.id_user');
+        $harga = $this->db->get()->result_array();
+
+        $data2 = array(
+            'id_harga'  => 'id_harga',
+            'id_user'   => 'id_user',
+            'harga'     => $harga,
+        );
+
+        
         $data = array(
             'harga'     => $this->input->post('harga'),
             'id_user'   => $this->session->userdata('id_user'),
-            'id_barang' => $this->input->post('id_barang'),
+            'id_barang' => $id_barang,
             'id_lelang' => $this->input->post('id_lelang'),
         );
         $this->db->insert('harga_penawar',$data);
-        redirect('ikut_lelang/lelang/'.$id_barang);
+        redirect('ikut_lelang/lelang/'.$id_barang,$data2);
     }
 }

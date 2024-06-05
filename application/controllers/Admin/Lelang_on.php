@@ -29,4 +29,7 @@ class Lelang_on extends CI_Controller {
             'status' => $this->input->post('status'),
         );
     }
+    public function close(){
+        
+    }
 }
