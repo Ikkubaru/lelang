@@ -2,8 +2,8 @@
 <!-- dibuat form jangan lupa -->
 <div class="col-xl-12 col-lg-4 col-md-4 col-sm-6">
    <div class="panel panel-default">
-   <div class="panel-heading bg-success txt-white">
-                                    <h4>Data Lelang Sedang Berlangsung</h4>
+   <div class="panel-heading bg-primary txt-white">
+                                    <h4>Data Lelang Selesai</h4>
                               </div>
                               <table class="table table-hover">
                                  <thead>
@@ -13,7 +13,6 @@
                                        <th>Gambar Barang</th>
                                        <th>Nama Penawar</th>
                                        <th>Harga Tertinggi</th>
-                                       <th>Aksi</th>
                                     </tr>
                                  </thead>
                                  <tbody>
@@ -26,14 +25,8 @@
                                        <td><?= $no++ ?></td>
                                        <td><?= $item['nama_barang'] ?></td>
                                        <td><img src="<?= base_url('assets/upload/barang/'.$item['foto']) ?>" class="img-fluid w-60 rounded-top"></td>
-                                       <td><?= $item['nama'] ?></td>
+                                       <td><?= $item['nama_user'] ?></td>
                                        <td>Rp. <?= htmlspecialchars(is_numeric($item['harga_tertinggi']) ? number_format($item['harga_tertinggi'], 0, ',', '.') : $item['harga_tertinggi']); ?></td>
-                                       <td>
-                                          <form action="<?= base_url('admin/lelang_on/close/'.$item['id_barang']) ?>" method="post">
-                                             <input type="hidden" name="harga_akhir" value="<?= $item['harga_tertinggi'] ?>">
-                                             <button type="submit" class="btn btn-danger" value="ditutup" name="status">Tutup Lelang</button>
-                                          </form>
-                                       </td>
                                        <?php endforeach; ?>
                                           <?php endforeach; ?>
                                              <?php else: ?>
@@ -44,9 +37,6 @@
                               </table>
                            </div>
                                             </div>
-                                            <!-- <div class="panel-footer">
-                                                <button type="submit" class="btn btn-danger" value="ditutup" name="status" href="<?= base_url('admin/lelang_on/close'.$lel['id_lelang']) ?>">Tutup lelang</button>
-                                                </div> -->
                                             </div>
                                           </form>
                         </div>

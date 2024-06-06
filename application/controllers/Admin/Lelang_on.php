@@ -16,6 +16,7 @@ class Lelang_on extends CI_Controller {
     $this->db->join('barang', 'lelang.id_barang = barang.id_barang');
     $this->db->join('user', 'barang.id_user = user.id_user');
     $this->db->join('petugas', 'lelang.id_petugas = petugas.id_petugas');
+    $this->db->where('lelang.status', 'dibuka');
     $lelang = $this->db->get()->result_array();
 
     // Query untuk mendapatkan harga tertinggi untuk setiap barang
@@ -48,10 +49,6 @@ class Lelang_on extends CI_Controller {
     // Memuat view dengan data yang sudah digabungkan
     $this->template->load('admin/template', 'admin/lelang_on', $data);
 }
-
-
-
-
     public function tutup($id_barang){
         $data = array(
             'status' => $this->input->post('status'),
@@ -66,7 +63,7 @@ class Lelang_on extends CI_Controller {
     // Data yang akan diupdate
     $data = array(
         'status' => $status,
-        'harga'  => $harga_akhir
+        'harga_awal'  => $harga_akhir
     );
 
     // Melakukan update pada tabel lelang

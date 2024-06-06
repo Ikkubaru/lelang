@@ -101,13 +101,8 @@
                     </a>                
                 </li>
                 <li class="<?php if($halaman == 'lelang_finish'){echo "active";} ?> treeview">
-                    <a class="waves-effect waves-dark" href="<?= base_url('');?>">
+                    <a class="waves-effect waves-dark" href="<?= base_url('admin/lelang_finish');?>">
                         <i class="icon-basket"></i><span> Lelang Selesai</span>
-                    </a>                
-                </li>
-                <li class="<?php if($halaman == 'history'){echo "active";} ?> treeview">
-                    <a class="waves-effect waves-dark" href="<?= base_url('');?>">
-                        <i class="icon-basket"></i><span> History Lelang</span>
                     </a>                
                 </li>
                 <li class="<?php if($halaman == 'kategori'){echo "active";} ?> treeview">
