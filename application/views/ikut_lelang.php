@@ -11,29 +11,13 @@
                             <div class="col-sm-6 col-xs-12 waves-effect waves-light">
                            <div class="grid-material">
                            <img src="<?= base_url('assets/upload/barang/'.$lelang->foto)?>" class="img-fluid w-100 rounded-top" alt=""> <br> <br>
-                                <h5><strong><?= $lelang->nama_barang ?></strong></h5>
-                                <h5>Deskripsi Barang : <strong><?= $lelang->deskripsi_barang ?></strong></h5>
-                                <h5>Harga Penawaran : <strong>Rp. <?= number_format($lelang->harga_awal) ?></strong></h5>
                            </div>
                             </div> <br>
                             <div class="col-sm-5 col-xs-12 waves-effect waves-light">
                            <div class="grid-material">
-                           <div class="col-sm-12 table-responsive">
-                              <table class="table table-hover banner bg-white">
-                                 <thead>
-                                    <tr>
-                                       <th>No.</th>
-                                       <th>Nama User</th>
-                                       <th>Nominal Yang Ditawarkan</th>
-                                    </tr>
-                                 </thead>
-                                 <tbody>
-                                    <tr>
-                                        <td></td>
-                                    </tr>
-                                 </tbody>
-                              </table>
-                           </div>
+                           <h5><strong><?= $lelang->nama_barang ?></strong></h5>
+                                <h5>Deskripsi Barang : <strong><?= $lelang->deskripsi_barang ?></strong></h5>
+                                <h5>Harga Penawaran : <strong>Rp. <?= number_format($lelang->harga_awal) ?></strong></h5> <br>
                             <form action="<?= base_url('ikut_lelang/tawar/').$lelang->id_barang ?>" method="post">
                                 <input type="hidden" name="id_lelang" value="<?= $lelang->id_lelang ?>">
                                 <input type="number" name="harga" class="form-control" placeholder="Ajukan Harga Penawaran"> <br>
@@ -47,4 +31,4 @@
                 </div>
             </div>
         </div>
-        <?php require_once('layout/_footer.php')?>
+        <?php require_once('layout/_footer.php');?>

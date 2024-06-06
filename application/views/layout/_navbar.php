@@ -53,6 +53,7 @@
                         <div class="navbar-nav mx-auto">
                             <a href="#" class="nav-item nav-link active">Home</a>
                             <a href="" class="nav-item nav-link">Contact</a>
+                            <a href="" class="nav-item nav-link">PBO</a>
                             <?php if($this->session->userdata('nama') == NULL){ ?>
                                 <a href="" class="nav-item nav-link">....</a>
                             <?php }else{?>

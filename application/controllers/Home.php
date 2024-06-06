@@ -15,10 +15,14 @@ class Home extends CI_Controller {
 		
 		$this->db->from('kategori');
 		$kategori = $this->db->get()->result_array();
+
+		// $this->db->select('barang.id_barang, barang.nama_barang, MAX(harga_penawar.harga) as harga_tertinggi, user.nama');
+		// $this->db->group_by('barang.id_barang');
+		// $harga['lelang'] = $this->db->get()->result();
+
 		$data = array(
 			'id_barang'		=> 'id_barang',
 			'id_kategori'	=> 'id_kategori',
-			'nama_kategori'	=> 'nama_kategori',
 			'barang'		=> $barang,
 			'kategori'		=> $kategori,
 		);
