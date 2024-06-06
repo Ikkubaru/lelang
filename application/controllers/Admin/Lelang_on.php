@@ -57,11 +57,24 @@ class Lelang_on extends CI_Controller {
             'status' => $this->input->post('status'),
         );
     }
-    public function close($id_barang){
-        $data = array(
-            'id_barang'     => $id_barang,
-            'status'		=> $this->input->post('status'),
-            'harga'         => $this->input->post('harga_akhir'),
-        );
-    }
+    public function close($id_barang)
+{
+    // Mengambil data dari form
+    $status = $this->input->post('status');
+    $harga_akhir = $this->input->post('harga_akhir');
+
+    // Data yang akan diupdate
+    $data = array(
+        'status' => $status,
+        'harga'  => $harga_akhir
+    );
+
+    // Melakukan update pada tabel lelang
+    $this->db->where('id_barang', $id_barang);
+    $this->db->update('lelang', $data);
+
+    // Redirect ke halaman yang sesuai setelah update
+    redirect('admin/lelang_on');
+}
+
 }

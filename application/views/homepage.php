@@ -62,12 +62,16 @@
                                                 <div class="fruite-img">
                                                     <img src="<?= base_url('assets/upload/barang/').$barank['foto'] ?>" class="img-fluid w-100 rounded-top">
                                                 </div>
-                                                <!-- <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;"><?= $barank['id_kategori'] ?></div> -->
+                                                <!-- <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;"><?= $barank['nama_kategori'] ?></div> -->
                                                 <div class="p-4 border border-secondary border-top-0 rounded-bottom">
                                                     <h4><?= $barank['nama_barang'] ?></h4>
                                                     <p><?= $barank['deskripsi_barang'] ?></p>
                                                     <div class="d-flex justify-content-between flex-lg-wrap">
-                                                        <p class="text-dark fs-5 fw-bold mb-0">Harga penawaran : Rp. <?= number_format($barank['harga_awal']) ?></p> <br>
+                                                        <?php if( $barank['harga_tertinggi']==NULL){?>
+                                                            <p class="text-dark fs-5 fw-bold mb-0">Harga penawaran : Rp. <?= $barank['harga_awal'] ?></p> <br>
+                                                            <?php }else{?>
+                                                        <p class="text-dark fs-5 fw-bold mb-0">Harga penawaran : Rp. <?php echo htmlspecialchars(is_numeric($barank['harga_tertinggi']) ? number_format($barank['harga_tertinggi'], 0, ',', '.') : $barank['harga_tertinggi']); ?></p> <br>
+                                                        <?php }?>
                                                         <center><a href="<?= base_url('ikut_lelang/lelang/'.$barank['id_barang'])?>" class="btn border border-secondary rounded-pill px-3 text-primary">ikut lelang</a></center>
                                                     </div>
                                                 </div>
