@@ -52,7 +52,6 @@
                     <div class="collapse navbar-collapse bg-white" id="navbarCollapse">
                         <div class="navbar-nav mx-auto">
                             <a href="#" class="nav-item nav-link active">Home</a>
-                            <a href="<?= base_url('tugas') ?>" class="nav-item nav-link">PBO</a>
                             <?php if($this->session->userdata('nama') == NULL){ ?>
                                 <a href="" class="nav-item nav-link">....</a>
                             <?php }else{?>

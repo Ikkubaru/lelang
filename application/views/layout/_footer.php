@@ -35,7 +35,7 @@
                     <div class="col-lg-3 col-md-6">
                         <div class="d-flex flex-column text-start footer-item">
                             <h4 class="text-light mb-3"></h4>
-                            <a class="btn-link" href=""></a>
+                            <a class="btn-link" href="<?= base_url('tugas') ?>">PBO</a>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
