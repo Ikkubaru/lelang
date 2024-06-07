@@ -2,6 +2,7 @@
 <br> <br> <br> <br> <br>
 <center>    
     <img src="<?= base_url('assets/upload/design.png') ?>">
+    <p>Cuma Gambar :v</p>
 </center> <br> <br> <br> <br> <br>
 <pre style="background-color:grey;">
     <code style="color:white;">
