@@ -23,7 +23,7 @@
                                     <tr>
                                        <td><?= $no++ ?></td>
                                        <td><?= $use['nama'] ?></td>
-                                       <td><?= $user['no_telp'] ?></td>
+                                       <td><?= $use['no_telp'] ?></td>
                                        <td><?= $use['alamat'] ?></td>
                                        <td><?= $use['username'] ?></td>
                                        <td>
