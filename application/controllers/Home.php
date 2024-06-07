@@ -14,6 +14,7 @@ class Home extends CI_Controller {
     $this->db->join('barang', 'lelang.id_barang = barang.id_barang');
     $this->db->join('user', 'barang.id_user = user.id_user');
     $this->db->join('petugas', 'lelang.id_petugas = petugas.id_petugas');
+	$this->db->where('lelang.status', 'dibuka');
     $barang = $this->db->get()->result_array();
 
     // Query untuk mendapatkan harga tertinggi untuk setiap barang
